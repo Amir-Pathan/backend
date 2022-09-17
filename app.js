@@ -1,5 +1,6 @@
 var express= require('express')
 const mongoose = require('mongoose')
+const serverless = require('serverless-http')
 
 var app = express()
 
@@ -9,6 +10,8 @@ app.use(cors({
     origin:'*',
     methods:['GET','POST',"DELETE","PUT"]
 }))
+
+const router = express.Router()
 
 const bodyParser = require('body-parser')
 
@@ -60,4 +63,8 @@ mongoose.connect('mongodb+srv://Amir:samsung@cluster0.krn3x.mongodb.net/?retryWr
     console.log('connected');
 })
 
-app.listen(8089)
+
+app.use('/.netlify/functions/api',router)
+
+module.exports=app;
+module.exports.handler=serverless(app)
