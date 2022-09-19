@@ -43,7 +43,7 @@ console.log(req.params.url);
 
 })
 
-app.get('/',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send("Hello Welcome")
 })
 
@@ -64,7 +64,7 @@ mongoose.connect('mongodb+srv://Amir:samsung@cluster0.krn3x.mongodb.net/?retryWr
 })
 
 
+
 app.use('/.netlify/functions/api',router)
 
-module.exports=app;
 module.exports.handler=serverless(app)
