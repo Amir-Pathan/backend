@@ -15,19 +15,20 @@ const router = express.Router()
 
 const bodyParser = require('body-parser')
 
-const imageUpload = require('./routes/user.routes')
 
-const sellers = require('./routes/seller.routes')
+const imageUpload = require('../routes/user.routes')
 
-const categories = require('./routes/categories.routes')
+const sellers = require('../routes/seller.routes')
 
-const products = require('./routes/product.routes')
+const categories = require('../routes/categories.routes')
 
-const customers = require('./routes/customer.routes')
+const products = require('../routes/product.routes')
 
-const address = require('./routes/address.routes')
+const customers = require('../routes/customer.routes')
 
-const orders = require('./routes/order.routes')
+const address = require('../routes/address.routes')
+
+const orders = require('../routes/order.routes')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
